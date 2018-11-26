@@ -18,7 +18,10 @@ class ApplicationController < Sinatra::Base
   post '/registrations' do
     @user = User.new(name: params["name"], email: params["email"], password: params["password"])
     @user.save
+<<<<<<< HEAD
     session[:id] = @user.id
+=======
+>>>>>>> 26830789678e446df71f8ec97527e60e9558ef12
     redirect '/users/home'
     binding.pry
   end
@@ -37,8 +40,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/sessions/logout' do
+<<<<<<< HEAD
     session.clear
     redirect to '/'
+=======
+
+    redirect '/'
+>>>>>>> 26830789678e446df71f8ec97527e60e9558ef12
   end
 
   get '/users/home' do
